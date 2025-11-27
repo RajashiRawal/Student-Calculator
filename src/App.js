@@ -8,8 +8,8 @@ const FundCalculator = () => {
   const [totalFee, setTotalfee] = useState(0);
 
   const locationFees = {
-    "inside-london": 1800,
-    "outside-london": 1171,
+    "inside-london": 1334,
+    "outside-london": 1023,
   };
 
   const handleClick = () => {
@@ -20,7 +20,8 @@ const FundCalculator = () => {
     setRemainingfee(remainingFee);
 
     if (location === "inside-london" || location === "outside-london") {
-      setTotalfee(remainingFee - locationFees[location]);
+      setTotalfee(remainingFee + (12 * locationFees[location]));
+
     } else {
       setTotalfee(remainingFee);
     }
